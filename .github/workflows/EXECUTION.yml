@@ -24,7 +24,7 @@ jobs:
           set +e
           QUESTION=$(echo '${{ github.event.issue.body }}' | grep -oP 'Question:.*$')
           ANSWER=$(echo '${{ github.event.issue.body }}' | grep -vP 'Question:.*$')
-          ANSWER=$(eval "$ANSWER" 2>&1) # world.execute(DeBug);
+          
           echo "question=$QUESTION" >> $GITHUB_ENV
           echo "answer=$ANSWER" >> $GITHUB_ENV
 
